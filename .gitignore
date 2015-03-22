@@ -1,0 +1,13 @@
+.*
+_*
+!.gitignore
+!.npmignore
+!.jshintrc
+!.jshintignore
+!.editorconfig
+node_modules
+*.log
+ssl
+*.crt
+*.pem
+*.key
