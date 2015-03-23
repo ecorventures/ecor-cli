@@ -3,9 +3,11 @@
   "version": "1.0.2",
   "description": "A command line utility for building Ecor systems.",
   "main": "./lib/index.js",
+  "bin": {
+    "ecor": "./bin/index.js"
+  },
   "scripts": {
-    "test": "mocha --harmony test",
-    "bin": "bin/index.js"
+    "test": "mocha --harmony test"
   },
   "repository": {
     "type": "git",
