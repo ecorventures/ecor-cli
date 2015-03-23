@@ -34,9 +34,9 @@ status.on('checkversion', function(){
     }  
 
     var argv = require('yargs')
-      .usage('Usage $0 <command> [options]')
+      .usage('Usage ecor <command> [options]')
       .command('install','Install a '+pkg.name+' app, tool, or module.')
-      .example('$0 install primer', 'Install the primer SASS package.')
+      .example('ecor install primer', 'Install the primer SASS package.')
       .alias('i','install')
       .help('help')
       .version(pkg.version)
