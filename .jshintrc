@@ -1,0 +1,8 @@
+{
+  "node": true,
+  "strict": false,
+  "indent": 2,
+  "globals": {
+    "require": true
+  }
+}

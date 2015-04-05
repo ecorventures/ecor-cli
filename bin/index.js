@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-"use strict";
-
 // Dependencies
 require('colors');
 var fs = require('fs'),
@@ -38,6 +36,12 @@ status.on('checkversion', function(){
       .command('install','Install a '+pkg.name+' app, tool, or module.')
       .example('ecor install primer', 'Install the primer SASS package.')
       .alias('i','install')
+      .command('bitbucket','Work with a remote BitBucket repository.')
+      .example('ecor bitbucket createrepo','Create a new remote repository.')
+      .alias('bb','bitbucket')
+      .command('config','Configuration management.')
+      .example('ecor config set key=value','Stores (permanently) the key/value in the user directory.')
+      .alias('cfg','config')
       .help('help')
       .version(pkg.version)
       .showHelpOnFail(false, "Specify --help for available options")
@@ -54,7 +58,24 @@ status.on('checkversion', function(){
       case 'i':
       case 'install':
         return util.install(process.arg[1]);
+      case 'bb':
+      case 'bitbucket':
+        var bb = require('../lib/bitbucket');
+        if (process.arg.length < 2){
+          return bb.help();
+        }
+        switch(process.arg[1]){
+          case 'createrepo':
+            return bb.createRepoWizard();
+          default:
+            return console.log((process.args[1]+' is not supported.').red.bold);
+        }
+      case 'cfg':
+      case 'config':
+        var cfg = require('../lib/config');
+        return cfg(process.arg.splice(1,process.arg.length-1));
       case 'help':
+        return argv.showHelp();
       default:
         argv.showHelp();
     }

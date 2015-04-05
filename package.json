@@ -2,7 +2,7 @@
   "name": "ecor",
   "version": "1.1.1",
   "description": "A command line utility for building Ecor systems.",
-  "main": "./lib/index.js",
+  "main": "./bin/index.js",
   "bin": {
     "ecor": "./bin/index.js"
   },
@@ -31,6 +31,7 @@
   "dependencies": {
     "ansi-regex": "^1.1.1",
     "async": "^0.9.0",
+    "bitbucket-api": "0.0.7",
     "colors": "^1.0.3",
     "comment-parser": "^0.3.0",
     "hawk": "^2.3.1",
@@ -41,6 +42,7 @@
     "mkdirp": "^0.5.0",
     "node-uuid": "^1.4.3",
     "once": "^1.3.1",
+    "open": "0.0.5",
     "request": "^2.53.0",
     "rimraf": "^2.3.2",
     "semver": "^4.3.1",
